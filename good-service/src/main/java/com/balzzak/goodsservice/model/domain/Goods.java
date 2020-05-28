@@ -47,6 +47,7 @@ public class Goods {
     private Timestamp updateDate;
 
     @OneToMany
+    @JoinColumn(name = "goodsId")
     private List<GoodsCategoryMap> categories;
 
     @OneToOne

@@ -3,7 +3,6 @@ package com.balzzak.goodsservice.model.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -31,5 +30,6 @@ public class GoodsCategory {
     private Timestamp updateDate;
 
     @OneToMany
+    @JoinColumn(name = "goodsCategoryId")
     private List<GoodsCategoryMap> goods;
 }
