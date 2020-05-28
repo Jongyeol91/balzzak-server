@@ -1,16 +1,11 @@
-package com.balzzak.goodservice.model.domain;
+package com.balzzak.goodsservice.model.request;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 
 @Getter
-@AllArgsConstructor
-public class Goods {
-
-    private long goodsId;
+public class GoodsRequest {
 
     private String goodsName;
 
@@ -23,8 +18,4 @@ public class Goods {
     private int saleState;
 
     private long versionId;
-
-    private Timestamp createDate;
-
-    private Timestamp updateDate;
 }

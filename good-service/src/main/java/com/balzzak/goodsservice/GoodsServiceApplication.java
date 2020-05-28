@@ -1,13 +1,14 @@
-package com.balzzak.goodservice;
+package com.balzzak.goodsservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GoodServiceApplication {
+public class GoodsServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GoodServiceApplication.class, args);
+        SpringApplication.run(GoodsServiceApplication.class, args);
     }
+
 
 }
