@@ -1,13 +1,14 @@
-package com.balzzak.goodservice.common.handler;
+package com.balzzak.goodsservice.common.handler;
 
-import com.balzzak.goodservice.common.exception.RequestException;
-import com.balzzak.goodservice.common.exception.ResponseException;
+import com.balzzak.goodsservice.common.exception.RequestException;
+import com.balzzak.goodsservice.common.exception.ResponseException;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
@@ -28,6 +29,13 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
     public final ResponseEntity<Object> handleRequestExceptions(Exception ex, WebRequest request) {
         ResponseException response = new ResponseException(new Date(), ex.getMessage(), request.getDescription(false));
 
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+
+        ResponseException response = new ResponseException(new Date(), ex.getMessage(), request.getDescription(false));
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 }

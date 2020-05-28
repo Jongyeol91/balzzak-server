@@ -1,4 +1,4 @@
-package com.balzzak.goodservice;
+package com.balzzak.goodsservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GoodServiceApplicationTests {
+public class GoodsServiceApplicationTests {
 
     @Test
     public void contextLoads() {

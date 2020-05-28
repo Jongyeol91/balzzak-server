@@ -1,4 +1,4 @@
-package com.balzzak.goodservice.common.exception;
+package com.balzzak.goodsservice.common.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
